@@ -125,6 +125,11 @@ def main():
             executionRoleArn=config["harness_execution_role_arn"],
             model=model_config(args.model),
             systemPrompt=[{"text": prompt}],
+            # Keep conversation state inside one runtime session, but do not
+            # retrieve details from unrelated sessions. Cross-session memory
+            # contaminates independent evaluation cases and can cause a bug
+            # ticket to reuse another customer's environment or repro steps.
+            memory={"optionalValue": {"disabled": {}}},
         )
     else:
         print(f"Creating harness '{args.name}' (takes ~2-3 minutes)...")
@@ -138,6 +143,7 @@ def main():
                     executionRoleArn=config["harness_execution_role_arn"],
                     model=model_config(args.model),
                     systemPrompt=[{"text": prompt}],
+                    memory={"disabled": {}},
                 )
                 break
             except Exception as exc:  # noqa: BLE001
