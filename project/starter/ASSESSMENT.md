@@ -46,7 +46,7 @@ ignored by Git.
 - A three-turn bug conversation asked only for reproduction steps, then only
   for environment, then invoked `bugreports___create_bug_report` exactly once.
 - A matching multi-turn ticket ID was verified in DynamoDB.
-- `harness-tests.json` covers FAQ answers, unsupported FAQ requests, unrelated
+- `flow-tests.json` (also retained as `harness-tests.json`) covers FAQ answers, unsupported FAQ requests, unrelated
   requests, incomplete and complete bugs, an ambiguous payment question, very
   short input, and prompt injection.
 - All nine final harness calls succeeded and produced valid JSONL in
@@ -88,7 +88,7 @@ From this directory, with the repository virtual environment already created:
 ../../.venv/bin/python setup_gateway.py
 ../../.venv/bin/python create_harness.py
 ../../.venv/bin/python chat.py
-../../.venv/bin/python generate-eval-dataset.py --tests-json harness-tests.json
+../../.venv/bin/python generate-eval-dataset.py --tests-json flow-tests.json
 ```
 
 Verify tickets:
@@ -101,7 +101,7 @@ aws dynamodb scan \
 
 ## Screenshot checklist
 
-Capture these in the AWS console for submission:
+Capture these in the AWS console or terminal for submission:
 
 1. AgentCore Harness details showing `support_chatbot`, READY status, Nova Pro,
    and the system prompt.
@@ -111,9 +111,10 @@ Capture these in the AWS console for submission:
    the tool call, and returned ticket ID.
 4. DynamoDB table showing the matching ticket with description,
    `stepsToReproduce`, environment, and `OPEN` status.
-5. Terminal or files showing `harness-tests.json` and the successful nine-case
+5. Rendered `ARCHITECTURE.md` showing the complete prompt-defined route diagram.
+6. Terminal or files showing `flow-tests.json` and the successful nine-case
    JSONL generation.
-6. Bedrock Evaluations job details and correctness results after completion.
+7. Bedrock Evaluations job details and correctness results after completion.
 
 ## Cleanup
 
