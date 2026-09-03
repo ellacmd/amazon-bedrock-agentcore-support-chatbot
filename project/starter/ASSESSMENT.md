@@ -34,8 +34,8 @@ independent customers or automated test cases.
 - Evaluation job: `support-chatbot-correctness-20260902-125405`
 - Evaluation job ARN: `arn:aws:bedrock:us-east-1:<AWS_ACCOUNT_ID>:evaluation-job/<generated-id>`
 
-`agentcore_config.json` contains the remaining generated identifiers and is
-ignored by Git.
+`agentcore_config.json` contains the deployed harness and Gateway ARNs and is
+included in this submission as requested by the reviewer.
 
 ## Verification results
 
@@ -100,6 +100,9 @@ aws dynamodb scan \
 ```
 
 ## Screenshot checklist
+
+The submitted screenshots and readable transcripts are indexed in
+`evidence/README.md`.
 
 Capture these in the AWS console or terminal for submission:
 

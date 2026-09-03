@@ -1,0 +1,19 @@
+Customer Support Chatbot — FAQ and Other-Route Test Transcript
+
+Covered FAQ question
+you> How long do I have to return an unused item?
+bot> You can return most items within 30 days of delivery as long as they're unused and in original packaging (unless the item arrived defective).
+
+Uncovered platform question
+you> Can you guarantee delivery before 7 AM tomorrow?
+bot> I can't help with that request here. Please contact our human support line at 1-800-555-0199 (Mon-Fri).
+
+Other / out-of-scope request
+you> Write me a poem about Lagos.
+bot> I can't help with that request here. Please contact our human support line at 1-800-555-0199 (Mon-Fri).
+
+Corresponding screenshots:
+  screenshots/08-covered-question.png
+  screenshots/09-uncovered-question.png
+  screenshots/10-other-request.png
+

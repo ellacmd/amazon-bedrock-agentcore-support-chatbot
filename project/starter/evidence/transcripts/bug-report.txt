@@ -1,0 +1,24 @@
+Customer Support Chatbot — Bug Report Transcript
+
+Connected to harness support_chatbot.
+
+you> The checkout button freezes the page.
+bot> What exact steps reproduce the issue?
+
+you> Add a product, open the cart, go to checkout, then click Checkout.
+bot> Which browser and operating system or device were you using?
+
+you> Firefox 142 on Windows 11.
+[tool call] bugreports___create_bug_report
+bot> Your bug report has been filed successfully with ticket ID 8afb7a04-b405-4b05-9054-b1cb61307c04. The engineering team will follow up. Thank you for helping us improve the site!
+
+Matching DynamoDB evidence:
+  screenshots/07-dynamodb-ticket.png
+
+Persisted fields:
+  ticketId: 8afb7a04-b405-4b05-9054-b1cb61307c04
+  description: The checkout button freezes the page.
+  stepsToReproduce: Add a product, open the cart, go to checkout, then click Checkout.
+  environment: Firefox 142 on Windows 11.
+  status: OPEN
+
